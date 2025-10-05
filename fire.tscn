@@ -1,0 +1,92 @@
+[gd_scene load_steps=15 format=3 uid="uid://cphycqc3gd6ct"]
+
+[ext_resource type="Script" uid="uid://7paig0idsnnm" path="res://scripts/fire.gd" id="1_bwgbv"]
+[ext_resource type="Texture2D" uid="uid://bmixvmk3xpusr" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Fire/fire6.png" id="2_umj4n"]
+[ext_resource type="Texture2D" uid="uid://dpotpk7vxyjh3" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Fire/fire7.png" id="3_aiuiy"]
+[ext_resource type="Texture2D" uid="uid://cmmvqgpdjhkti" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Fire/fire8.png" id="4_2k5r8"]
+[ext_resource type="Texture2D" uid="uid://b8k0rytejbpux" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Fire/fire9.png" id="5_6pvs2"]
+[ext_resource type="Texture2D" uid="uid://ekfko7v0tklr" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Fire/fire1.png" id="6_jd5mo"]
+[ext_resource type="Texture2D" uid="uid://ti7og3bd6yyd" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Fire/fire2.png" id="7_gwkax"]
+[ext_resource type="Texture2D" uid="uid://cuwo4rc62bj5l" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Fire/fire3.png" id="8_7mbn0"]
+[ext_resource type="Texture2D" uid="uid://b5r70ubykuq4t" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Fire/fire4.png" id="9_4dgd1"]
+[ext_resource type="Texture2D" uid="uid://dthnaaiv8rloa" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Fire/fire5.png" id="10_e8bjs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gi2fe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_umj4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aiuiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2k5r8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6pvs2")
+}],
+"loop": false,
+"name": &"collected",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jd5mo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gwkax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7mbn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4dgd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_e8bjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_umj4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aiuiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2k5r8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6pvs2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uult5"]
+
+[sub_resource type="Gradient" id="Gradient_bwgbv"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_umj4n"]
+gradient = SubResource("Gradient_bwgbv")
+fill = 1
+fill_from = Vector2(0.5157233, 0.4874214)
+
+[node name="Fire" type="Area2D"]
+script = ExtResource("1_bwgbv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gi2fe")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uult5")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 1.3113022e-06)
+scale = Vector2(0.5, 0.46875003)
+texture = SubResource("GradientTexture2D_umj4n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

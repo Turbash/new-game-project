@@ -8,20 +8,37 @@ const MAX_FLAME_LEVEL = 100.0
 @export var flame_decay_rate = 1.0
 
 var flare_cost = 25.0
-var flare_big_scale = 10.0 
-var flare_duration = 10
+var flare_big_scale = 10.0
+var flare_duration = 10.0
 
 @onready var point_light = $PointLight2D
+@onready var animated_player = $AnimatedSprite2D
+@onready var flame_label=$FlameLevel
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var is_flaring = false 
-var flare_timer = 0.0 
+var is_flaring = false
+var flare_timer = 0.0
+
+var is_midgame_crossed=false
+
+var is_animation_locked = false
+
+func _process(delta: float) -> void:
+	flame_level-=flame_decay_rate * delta
+	flame_label.text="Flame Level: " + str(int(flame_level)) + "/100"
 
 func _physics_process(delta):
+	if flame_level>100:
+		flame_level=100
+	if flame_level<=0:
+		if !is_midgame_crossed:
+			die()
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
 	var direction = Input.get_axis("left", "right")
+	
 	if direction:
 		velocity.x = direction * speed
 	else:
@@ -33,32 +50,62 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("flare"):
 		use_flare()
 
+	handle_flare_timer(delta)
+
+	update_animation(direction)
+	update_light()
+
+	move_and_slide()
+
+func update_animation(direction):
+	if is_animation_locked:
+		return
+
+	if direction > 0:
+		animated_player.flip_h = false
+	elif direction < 0:
+		animated_player.flip_h = true
+
+	if not is_on_floor():
+		animated_player.play("jump")
+	else:
+		if velocity.x != 0:
+			animated_player.play("run")
+		else:
+			animated_player.play("idle")
+
+func handle_flare_timer(delta):
 	if is_flaring:
 		flare_timer -= delta
 		if flare_timer <= 0:
 			is_flaring = false
 			print("Flare ended. Light is back to normal.")
 
-	flame_level = max(0, flame_level - flame_decay_rate * delta)
-	update_light()
-
-	move_and_slide()
-
 func update_light():
 	if is_flaring:
+		point_light.texture_scale = flare_big_scale
 		return
 
 	var flame_percentage = flame_level / MAX_FLAME_LEVEL
 	point_light.texture_scale = lerp(0.5, 4.0, flame_percentage)
 	point_light.energy = lerp(0.2, 1.5, flame_percentage)
 
-
 func use_flare():
 	if is_flaring or flame_level < flare_cost:
-		return 
+		return
 
 	is_flaring = true
-	flare_timer = flare_duration 
+	flare_timer = flare_duration
 	flame_level -= flare_cost
-	point_light.texture_scale = flare_big_scale
 	print("FLARE! Light is now big.")
+	
+	animated_player.play("flare")
+	is_animation_locked = true
+	
+	await get_tree().create_timer(0.4).timeout
+	is_animation_locked = false
+
+func die():
+	animated_player.play("death")
+	print("You died")
+	get_tree().reload_current_scene()	

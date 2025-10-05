@@ -10,10 +10,15 @@ config_version=5
 
 [application]
 
-config/name="The Altar of the False Dawn"
+config/name="The Last Light"
 run/main_scene="uid://cmuy73nrhm85y"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
 
 [input]
 

@@ -1,11 +1,60 @@
-[gd_scene load_steps=6 format=3 uid="uid://be8qbmt0fe144"]
+[gd_scene load_steps=57 format=3 uid="uid://be8qbmt0fe144"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bbvqrck4056no" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://croj2npxtqyky" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Death/death1.png" id="2_2gdjj"]
+[ext_resource type="Texture2D" uid="uid://blck8dfipa23i" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Idle/idle1.png" id="2_a38lo"]
+[ext_resource type="Texture2D" uid="uid://c7osl6vuhewbh" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Idle/idle2.png" id="3_4ni07"]
+[ext_resource type="Texture2D" uid="uid://bnhon61kal4cg" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Death/death2.png" id="3_sc3ue"]
+[ext_resource type="Texture2D" uid="uid://qj3w3lkykld7" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Idle/idle3.png" id="4_l71n6"]
+[ext_resource type="Texture2D" uid="uid://bn1566463s0qi" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Death/death3.png" id="4_lxlsd"]
+[ext_resource type="Texture2D" uid="uid://cug1k3csya5jy" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Death/death4.png" id="5_ha2mi"]
+[ext_resource type="Texture2D" uid="uid://b5lyc5oyxoywu" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Idle/idle5.png" id="5_ke2ow"]
+[ext_resource type="Texture2D" uid="uid://bb8oe3n8oww3m" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Death/death5.png" id="6_apa73"]
+[ext_resource type="Texture2D" uid="uid://bijefricp2rht" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Idle/idle4.png" id="6_ujl30"]
+[ext_resource type="Texture2D" uid="uid://dch21j4mkts3e" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Idle/idle6.png" id="7_31cv2"]
+[ext_resource type="Texture2D" uid="uid://bus3tb5whjt3v" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Death/death6.png" id="7_74r1k"]
+[ext_resource type="Texture2D" uid="uid://cm1gt2hhq5sxg" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Death/death7.png" id="8_8svfe"]
+[ext_resource type="Texture2D" uid="uid://dyb8goshcaxoh" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Idle/idle7.png" id="8_pf23h"]
+[ext_resource type="Texture2D" uid="uid://dcnhw8r2mwqj2" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Death/death8.png" id="9_2a3c5"]
+[ext_resource type="Texture2D" uid="uid://bt35mrtrab2tm" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Idle/idle8.png" id="9_dt7fs"]
+[ext_resource type="Texture2D" uid="uid://d31264rtguy04" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Death/death9.png" id="10_42b1b"]
+[ext_resource type="Texture2D" uid="uid://cr0jtcj1ghq32" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Idle/idle9.png" id="10_wqfne"]
+[ext_resource type="Texture2D" uid="uid://78lv64e2bbj8" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Death/death10.png" id="11_h7ic4"]
+[ext_resource type="Texture2D" uid="uid://cljqcpg1hfptu" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Idle/idle10.png" id="11_wnwbv"]
+[ext_resource type="Texture2D" uid="uid://cvpa65qnksvbw" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Attack/attack1.png" id="12_au7lq"]
+[ext_resource type="Texture2D" uid="uid://banlqvb54m2y3" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Idle/idle11.png" id="12_gl8cc"]
+[ext_resource type="Texture2D" uid="uid://b1i5ko6l08jt5" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Idle/idle12.png" id="13_487ah"]
+[ext_resource type="Texture2D" uid="uid://buhh14wsg3tie" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Attack/attack2.png" id="13_nubpm"]
+[ext_resource type="Texture2D" uid="uid://cy02yjx4bs3mr" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Idle/idle13.png" id="14_md1ol"]
+[ext_resource type="Texture2D" uid="uid://oog63kqijyww" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Attack/attack3.png" id="14_ua5cf"]
+[ext_resource type="Texture2D" uid="uid://b68xmy83nrli8" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Attack/attack4.png" id="15_51ujp"]
+[ext_resource type="Texture2D" uid="uid://bvtl2hciw8www" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Run/run1.png" id="15_bj30b"]
+[ext_resource type="Texture2D" uid="uid://i78poh8wl3tr" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Run/run2.png" id="16_jc3p3"]
+[ext_resource type="Texture2D" uid="uid://4rcmskdycc5s" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Attack/attack5.png" id="16_tk41t"]
+[ext_resource type="Texture2D" uid="uid://vlb47p0pnxj1" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Attack/attack6.png" id="17_fuw3a"]
+[ext_resource type="Texture2D" uid="uid://b8vcau8r3nxgs" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Run/run3.png" id="17_hax0n"]
+[ext_resource type="Texture2D" uid="uid://dd6usu3jrdspw" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Attack/attack7.png" id="18_8txt3"]
+[ext_resource type="Texture2D" uid="uid://1df51k4shunk" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Run/run4.png" id="18_t4otl"]
+[ext_resource type="Texture2D" uid="uid://dysn8chey8qvw" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Run/run5.png" id="19_j2b1d"]
+[ext_resource type="Texture2D" uid="uid://cwqup57oe3021" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Run/run6.png" id="20_cs1tg"]
+[ext_resource type="Texture2D" uid="uid://d1va8ftw2nuod" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Run/run7.png" id="21_2dvfe"]
+[ext_resource type="Texture2D" uid="uid://kxbdm1uh8rwu" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/Run/run8.png" id="22_giy8y"]
+[ext_resource type="Texture2D" uid="uid://crk5mclx6cqbl" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/High_Jump/high_jump1.png" id="32_2w11d"]
+[ext_resource type="Texture2D" uid="uid://dxa1ie5qimqw8" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/High_Jump/high_jump2.png" id="33_770dr"]
+[ext_resource type="Texture2D" uid="uid://dsjknvnawwb6q" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/High_Jump/high_jump3.png" id="34_8f1cb"]
+[ext_resource type="Texture2D" uid="uid://bp2mofhc0rr2d" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/High_Jump/high_jump4.png" id="35_vdulj"]
+[ext_resource type="Texture2D" uid="uid://rcbvtpqolpni" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/High_Jump/high_jump5.png" id="36_vau08"]
+[ext_resource type="Texture2D" uid="uid://begcf6o7ntbci" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/High_Jump/high_jump6.png" id="37_qsb7e"]
+[ext_resource type="Texture2D" uid="uid://blkxyb6nawc6b" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/High_Jump/high_jump7.png" id="38_qjsmb"]
+[ext_resource type="Texture2D" uid="uid://bgdfpaiua4kai" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/High_Jump/high_jump8.png" id="39_mwp2n"]
+[ext_resource type="Texture2D" uid="uid://da8kgx0r5o81a" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/High_Jump/high_jump9.png" id="40_0yhus"]
+[ext_resource type="Texture2D" uid="uid://sti26nrfq7t8" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/High_Jump/high_jump10.png" id="41_jlll7"]
+[ext_resource type="Texture2D" uid="uid://ckq4g71um6pq5" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/High_Jump/high_jump11.png" id="42_qk6i7"]
+[ext_resource type="Texture2D" uid="uid://jeu6yj36uhkq" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/High_Jump/high_jump12.png" id="43_6c3st"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
-radius = 6.2
-height = 14.599999
+radius = 2.4999998
+height = 6.3999996
 
 [sub_resource type="Gradient" id="Gradient_3vyb7"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -15,15 +64,201 @@ gradient = SubResource("Gradient_3vyb7")
 fill = 1
 fill_from = Vector2(0.5220126, 0.5125786)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_fdfoy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2gdjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sc3ue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lxlsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ha2mi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_apa73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_74r1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8svfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2a3c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_42b1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_h7ic4")
+}],
+"loop": true,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_au7lq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nubpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ua5cf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_51ujp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_tk41t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fuw3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8txt3")
+}],
+"loop": true,
+"name": &"flare",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_a38lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4ni07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l71n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ke2ow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ujl30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ke2ow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_31cv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pf23h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dt7fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wqfne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wnwbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_487ah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_md1ol")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_2w11d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_770dr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_8f1cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_vdulj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_vau08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_qsb7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_qjsmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_mwp2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_0yhus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_jlll7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_qk6i7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_6c3st")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_bj30b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jc3p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_hax0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_t4otl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_j2b1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_cs1tg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_2dvfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_giy8y")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2gdjj"]
+light_mode = 1
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
+
+[node name="AnimationTimer" type="Timer" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(10, 10)
 shape = SubResource("CapsuleShape2D_3vyb7")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(0, 2.4999995)
+position = Vector2(21, -2.9999998)
 scale = Vector2(1.53125, 1.359375)
 energy = 2.16
 texture = SubResource("GradientTexture2D_g2els")
@@ -31,9 +266,24 @@ texture = SubResource("GradientTexture2D_g2els")
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_bottom = 500
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = -0.0013775507
-texture = ExtResource("1_3vyb7")
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(24, -26)
+rotation = -0.0013775507
+scale = Vector2(1.221381, 1.2897831)
+sprite_frames = SubResource("SpriteFrames_fdfoy")
+animation = &"idle"
+
+[node name="FlameLevel" type="Label" parent="."]
+material = SubResource("CanvasItemMaterial_2gdjj")
+offset_left = -162.0
+offset_top = -131.0
+offset_right = 185.0
+offset_bottom = -49.0
+text = "Flame Level : x/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]
