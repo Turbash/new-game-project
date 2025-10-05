@@ -1,33 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://be8qbmt0fe144"]
+[gd_scene load_steps=6 format=3 uid="uid://be8qbmt0fe144"]
 
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_3vyb7"]
-[ext_resource type="Script" uid="uid://bbvqrck4056no" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://bbvqrck4056no" path="res://scripts/player.gd" id="1_g2els"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
-radius = 6.0999994
-height = 13.4
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_3vyb7")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_3vyb7"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_3vyb7")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+radius = 6.2
+height = 14.599999
 
 [sub_resource type="Gradient" id="Gradient_3vyb7"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -44,12 +22,6 @@ script = ExtResource("1_g2els")
 scale = Vector2(10, 10)
 shape = SubResource("CapsuleShape2D_3vyb7")
 
-[node name="Player" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_g2els")
-
-[node name="Torch" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_3vyb7")
-
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, 2.4999995)
 scale = Vector2(1.53125, 1.359375)
@@ -57,3 +29,11 @@ energy = 2.16
 texture = SubResource("GradientTexture2D_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_bottom = 500
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -0.0013775507
+texture = ExtResource("1_3vyb7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0

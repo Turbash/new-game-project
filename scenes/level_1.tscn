@@ -1,10 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmuy73nrhm85y"]
+[gd_scene load_steps=4 format=3 uid="uid://cmuy73nrhm85y"]
 
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player.tscn" id="1_014kd"]
+[ext_resource type="PackedScene" uid="uid://b2lwg0jv6nijf" path="res://scenes/killzone.tscn" id="2_bswci"]
+[ext_resource type="PackedScene" uid="uid://cpsnqcfrb7jil" path="res://scenes/ground_temporary.tscn" id="3_rus8k"]
 
 [node name="Level1" type="Node2D"]
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(0, -2)
+color = Color(0, 0, 0, 1)
+
 [node name="Player" parent="." instance=ExtResource("1_014kd")]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
+[node name="Killzone" parent="." instance=ExtResource("2_bswci")]
+position = Vector2(582.23364, 544.40955)
+
+[node name="GroundTemporary" parent="." instance=ExtResource("3_rus8k")]
+position = Vector2(6, 132)
