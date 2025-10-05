@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The Last Light"
-run/main_scene="uid://cmuy73nrhm85y"
+run/main_scene="uid://drg2kod3m5l0f"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

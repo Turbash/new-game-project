@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://drg2kod3m5l0f"]
+
+[ext_resource type="Script" uid="uid://cjh4louocj3el" path="res://scripts/hud.gd" id="1_oo0fn"]
+[ext_resource type="Texture2D" uid="uid://ctmt7i68bj1r4" path="res://assets/photo_6273958269336357882_y.jpg" id="2_oo0fn"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_oo0fn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 640.0
+offset_bottom = 363.0
+texture = ExtResource("2_oo0fn")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_top = 274.0
+offset_right = 643.0
+offset_bottom = 344.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Start Game"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_start_button_pressed"]

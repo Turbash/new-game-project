@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw3mxftxpetd7"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_y32ns"]
+file = "document_6273958268876365003.webm"
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stream = SubResource("VideoStreamTheora_y32ns")
+autoplay = true

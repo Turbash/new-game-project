@@ -1,11 +1,14 @@
 extends CharacterBody2D
 
 @export var speed = 150.0
-@export var jump_velocity = -300.0
+@export var jump_velocity = -500.0
 
+@export_group("Flame Mechanics")
 @export_range(0.0, 100.0) var flame_level = 100.0
-const MAX_FLAME_LEVEL = 100.0
 @export var flame_decay_rate = 1.0
+@export var flame_recharge_amount = 50.0
+
+const MAX_FLAME_LEVEL = 100.0
 
 var flare_cost = 25.0
 var flare_big_scale = 10.0
@@ -13,32 +16,33 @@ var flare_duration = 10.0
 
 @onready var point_light = $PointLight2D
 @onready var animated_player = $AnimatedSprite2D
-@onready var flame_label=$FlameLevel
+@onready var flame_label = $FlameLevel
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_flaring = false
 var flare_timer = 0.0
-
-var is_midgame_crossed=false
-
+var is_midgame_crossed = false
 var is_animation_locked = false
+var is_dead = false 
+var has_key = false
+
 
 func _process(delta: float) -> void:
-	flame_level-=flame_decay_rate * delta
-	flame_label.text="Flame Level: " + str(int(flame_level)) + "/100"
+
+	if is_dead: return
+	flame_level -= flame_decay_rate * delta
+	flame_label.text = "Flame Level: " + str(int(flame_level)) + "/" + str(MAX_FLAME_LEVEL)
 
 func _physics_process(delta):
-	if flame_level>100:
-		flame_level=100
-	if flame_level<=0:
-		if !is_midgame_crossed:
-			die()
+	if is_dead: return 
 	
+	if flame_level <= 0 and not is_midgame_crossed:
+		die()
+
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
 	var direction = Input.get_axis("left", "right")
-	
 	if direction:
 		velocity.x = direction * speed
 	else:
@@ -51,11 +55,11 @@ func _physics_process(delta):
 		use_flare()
 
 	handle_flare_timer(delta)
-
 	update_animation(direction)
 	update_light()
 
 	move_and_slide()
+
 
 func update_animation(direction):
 	if is_animation_locked:
@@ -105,7 +109,25 @@ func use_flare():
 	await get_tree().create_timer(0.4).timeout
 	is_animation_locked = false
 
+
+func increase_flame_level():
+	flame_level = min(flame_level + flame_recharge_amount, MAX_FLAME_LEVEL)
+	print("Flame recharged! New level: ", flame_level)
+
 func die():
+	if is_dead:
+		return 
+
+	is_dead = true
+	is_animation_locked = true 
+	set_physics_process(false) 
+	velocity = Vector2.ZERO 
+	flame_level=100
 	animated_player.play("death")
-	print("You died")
-	get_tree().reload_current_scene()	
+	
+	await get_tree().create_timer(1.0).timeout
+	get_tree().reload_current_scene()
+	
+func collect_key():
+	has_key = true
+	print("Player now has the key!")

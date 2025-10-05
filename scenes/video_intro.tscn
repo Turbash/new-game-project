@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctmwewji1dkkx"]
+
+[ext_resource type="Script" uid="uid://ba18fg0amoghh" path="res://scenes/video_intro.gd" id="1_xbovl"]
+
+[node name="VideoIntro" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_xbovl")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 9.0
+offset_right = 511.0
+offset_bottom = 509.0
+autoplay = true

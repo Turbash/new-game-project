@@ -53,8 +53,8 @@
 [ext_resource type="Texture2D" uid="uid://jeu6yj36uhkq" path="res://assets/audio/craftpix-891165-assassin-mage-viking-free-pixel-art-game-heroes/PNG/Mage/High_Jump/high_jump12.png" id="43_6c3st"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
-radius = 2.4999998
-height = 6.3999996
+radius = 1.0999999
+height = 3.6
 
 [sub_resource type="Gradient" id="Gradient_3vyb7"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -270,11 +270,12 @@ limit_bottom = 500
 wait_time = 3.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(24, -26)
+position = Vector2(15, -14)
 rotation = -0.0013775507
-scale = Vector2(1.221381, 1.2897831)
+scale = Vector2(0.6451387, 0.69689757)
 sprite_frames = SubResource("SpriteFrames_fdfoy")
-animation = &"idle"
+animation = &"run"
+autoplay = "idle"
 
 [node name="FlameLevel" type="Label" parent="."]
 material = SubResource("CanvasItemMaterial_2gdjj")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg3oll80tget8"]
+
+[ext_resource type="Texture2D" uid="uid://d0d5v3pk8w51i" path="res://assets/Cartoon_Medieval_Field_Work_Level_Set_Building - Wide Door 03.png" id="1_hpvv5"]
+[ext_resource type="Script" uid="uid://bynwoysxa8wnw" path="res://scripts/door.gd" id="2_uvdjg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpvv5"]
+size = Vector2(44, 49)
+
+[node name="Door" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.4305115e-06, -8.999999)
+scale = Vector2(0.25781247, 0.2109375)
+texture = ExtResource("1_hpvv5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8.5)
+shape = SubResource("RectangleShape2D_hpvv5")
+script = ExtResource("2_uvdjg")
