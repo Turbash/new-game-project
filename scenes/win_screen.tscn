@@ -1,17 +1,30 @@
-[gd_scene format=3 uid="uid://34hnrhpx2wld"]
+[gd_scene load_steps=3 format=3 uid="uid://34hnrhpx2wld"]
 
-[node name="Control" type="Control"]
+[ext_resource type="Script" uid="uid://bqowuo1abb86k" path="res://scenes/win_screen.gd" id="1_erk2x"]
+[ext_resource type="Texture2D" uid="uid://b4pe8fyiwlb5a" path="res://assets/photo_6273958269336357890_y.jpg" id="1_wv5lq"]
+
+[node name="WinScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_erk2x")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = 3.0
+offset_right = 642.0
+offset_bottom = 361.0
+texture = ExtResource("1_wv5lq")
+expand_mode = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_top = 251.0
+offset_right = 639.0
+offset_bottom = 360.0
+theme_override_font_sizes/font_size = 32
+text = "Restart Game
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

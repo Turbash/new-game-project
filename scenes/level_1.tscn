@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmuy73nrhm85y"]
+[gd_scene load_steps=12 format=3 uid="uid://cmuy73nrhm85y"]
 
 [ext_resource type="Script" uid="uid://c8jajtne38ad8" path="res://scripts/level_1.gd" id="1_4nkto"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player.tscn" id="1_014kd"]
@@ -666,6 +666,22 @@ texture = ExtResource("5_4nkto")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4nkto")
 
+[sub_resource type="GDScript" id="GDScript_pa8r4"]
+script/source = "extends Area2D
+
+func _on_body_entered(body: Node2D):
+
+	if body.has_method(\"collect_key\"):
+		
+
+		if body.has_key:
+			print(\"Player has the key! Door unlocked.\")
+			
+			get_tree().change_scene_to_file(\"res://scenes/win_screen.tscn\")
+		else:
+			print(\"The door is locked. Find the key first!\")
+"
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_4nkto")
 
@@ -690,12 +706,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 position = Vector2(0, -2)
 color = Color(0, 0, 0, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_014kd")]
-position = Vector2(-24, -4)
+position = Vector2(-50, 11)
 
 [node name="Killzone" parent="." instance=ExtResource("2_bswci")]
 position = Vector2(382, 300)
@@ -733,9 +748,14 @@ vertical_alignment = 1
 
 [node name="Door" parent="." instance=ExtResource("6_pa8r4")]
 position = Vector2(-94, -1073)
+script = SubResource("GDScript_pa8r4")
 
 [node name="Key" parent="." instance=ExtResource("7_15mv3")]
 position = Vector2(-883, -1046)
 
 [node name="Fire3" parent="." instance=ExtResource("3_rus8k")]
 position = Vector2(-234, -984)
+
+[connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
+
+[editable path="Door"]

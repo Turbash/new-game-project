@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 @export_group("Flame Mechanics")
 @export_range(0.0, 100.0) var flame_level = 100.0
-@export var flame_decay_rate = 1.0
+@export var flame_decay_rate = 3.0
 @export var flame_recharge_amount = 50.0
 
 const MAX_FLAME_LEVEL = 100.0
